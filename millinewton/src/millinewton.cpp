@@ -16,8 +16,11 @@ void setup() {
 void loop() { // main code here, will run repeatedly
     int start = millis();
 
-    int width  = 800; // smaller values
-    int height = 600;   
+    // int width  = 800; // 128 seconds on arduino nano ESP32
+    // int height = 600;   
+    // int iterations = 20;
+    int width  = 400; // 32 seconds on arduino nano ESP32
+    int height = 300;   
     int iterations = 20;
     int y, x, i;   
     int r, root;
@@ -105,8 +108,8 @@ void loop() { // main code here, will run repeatedly
          }
     }
     Serial.print(" Time: ");
-    Serial.println(millis() - start);
-  
+    Serial.print((millis() - start)/1000.0); // DEBUG show time
+    Serial.println(" seconds");
     // fclose ( out );
     // // exit ( EXIT_SUCCESS );
 
